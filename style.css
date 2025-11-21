@@ -1,0 +1,385 @@
+/* ----------------------------------------------------------
+   FONT IMPORTS
+---------------------------------------------------------- */
+@font-face {
+     font-family: poppins-regular;
+     src: url("fonts/poppins/Poppins-Regular.ttf");
+     font-weight: 500;
+}
+
+@font-face {
+     font-family: poppins-SemiBold;
+     src: url("fonts/poppins/Poppins-SemiBold.ttf");
+     font-weight: 600;
+}
+
+@font-face {
+     font-family: poppins-Bold;
+     src: url("fonts/poppins/Poppins-Bold.ttf");
+     font-weight: 700;
+}
+
+
+/* ----------------------------------------------------------
+   ROOT VARIABLES
+---------------------------------------------------------- */
+:root {
+     /* Headings */
+     --fs-h1: clamp(0.2rem, 5vw, 1.8rem);
+     --fs-h2: clamp(0.9rem, 4vw, 1.5rem);
+     --fs-h3: clamp(0.8rem, 3.5vw, 1.3rem);
+     --fs-h4: clamp(0.7rem, 3vw, 1.1rem);
+     --fs-h5: clamp(0.65rem, 2.5vw, 1rem);
+     --fs-h6: clamp(0.4rem, 2vw, 0.9rem);
+
+     /* Body Text */
+     --fs-p: clamp(0.55rem, 1.8vw, 0.8rem);
+     --fs-small: clamp(0.48rem, 1.4vw, 0.7rem);
+
+     /* Font Colors */
+     --font-color1: #151515;
+     --font-color2: white;
+
+     /* Container Colors & Styling */
+     --bg-color1: #f6f6f6;
+     --bg-color2: #c9c9c9;
+     --bg-color3: rgb(223, 218, 218);
+     --bg-color4: #b6b6b6;
+     --container-outline: solid 1px #7a7a7a;
+
+     /* Accent Colors */
+     --ac-color1: #00a8e0ca;
+     --ac-color2: #008dbc;
+}
+
+
+/* ----------------------------------------------------------
+   GLOBAL RESET
+---------------------------------------------------------- */
+* {
+     margin: 0;
+     padding: 0;
+}
+
+html {
+     scroll-behavior: smooth;
+     scrollbar-width: none;
+}
+
+body {
+     display: grid;
+     grid-template-columns: 0.3fr 1fr 0.3fr;
+     grid-template-rows: auto 1fr auto;
+     grid-template-areas:
+          "left header right"
+          "left main right"
+          "left footer right";
+     font-family: "poppins-regular";
+}
+
+
+/* ----------------------------------------------------------
+   SIDES (Left / Right)
+---------------------------------------------------------- */
+.left {
+     grid-area: left;
+}
+
+.right {
+     grid-area: right;
+}
+
+
+/* ----------------------------------------------------------
+   HEADER
+---------------------------------------------------------- */
+header {
+     grid-area: header;
+     display: grid;
+     grid-template-columns: auto 1fr auto;
+     grid-template-areas: "left-head content-head right-head";
+     margin-top: 1rem;
+}
+
+/* Profile Picture */
+.pfp-pic img {
+     grid-area: left-head;
+     display: block;
+     width: 144px;
+     height: auto;
+     border-radius: 6px;
+}
+
+/* Header Content */
+.head-contents {
+     grid-area: content-head;
+     margin: auto clamp(0.01rem, 2vw, 1rem);
+     position: relative;
+}
+
+h1 {
+     font-size: var(--fs-h1);
+     font-family: "poppins-Bold";
+     display: block;
+}
+
+.head-contents h6 {
+     font-family: "poppins-SemiBold";
+     font-size: var(--fs-h6);
+     margin-top: 4px;
+}
+
+/* Description */
+article {
+     display: flex;
+     align-items: center;
+     font-size: var(--fs-small);
+}
+
+/* Buttons */
+.btns {
+     margin-top: clamp(2px, 2vw, 8px);
+}
+
+.btns button,
+.btns a {
+     background-color: var(--ac-color1);
+     color: var(--font-color2);
+     text-decoration: none;
+     border-radius: 4px;
+     border: none;
+     font-family: "poppins-SemiBold";
+     font-size: var(--fs-small);
+     padding: 2px;
+     outline: none;
+}
+
+.btns button:hover {
+     background-color: var(--ac-color2);
+     padding: 2.2px;
+}
+
+/* Theme Switch */
+#switch {
+     grid-area: right-head;
+}
+
+#switch button {
+     background-color: transparent;
+     border: none;
+     font-size: 24px;
+}
+
+
+/* ----------------------------------------------------------
+   MAIN LAYOUT
+---------------------------------------------------------- */
+main {
+     grid-area: main;
+     margin-top: 16px;
+     display: grid;
+     grid-template-areas:
+          "about-me  about-me experience"
+          "tech-stack tech-stack experience"
+          "projects certificate contact";
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-template-rows: auto auto auto;
+     gap: 6px;
+}
+
+main section {
+     background-color: var(--bg-color1);
+     border: solid var(--bg-color2) 0.5px;
+     border-radius: 4px;
+     padding: 12px;
+}
+
+main article {
+     gap: 2px;
+}
+
+
+/* ----------------------------------------------------------
+   ABOUT SECTION
+---------------------------------------------------------- */
+.about-section {
+     grid-area: about-me;
+}
+
+.about-section h5 {
+     font-size: var(--fs-h5);
+     color: var(--font-color1);
+}
+
+.about-section i {
+     color: #7a7a7a;
+}
+
+.about-section p {
+     font-size: var(--fs-p);
+     line-height: 1.8;
+}
+
+
+/* ----------------------------------------------------------
+   EXPERIENCE SECTION
+---------------------------------------------------------- */
+.experience-section {
+     grid-area: experience;
+}
+
+.experience-section h5{
+     font-size: var(--fs-h5);
+     color: var(--font-color1);
+}
+.experience-section i {
+     font-size: var(--fs-h5);
+     color: #7a7a7a;
+}
+
+
+/* ----------------------------------------------------------
+   TECH STACK SECTION
+---------------------------------------------------------- */
+.tech-stack-section {
+     grid-area: tech-stack;
+}
+
+.tech-stack-section h5 {
+     font-size: var(--fs-h5);
+     color: var(--font-color1);
+}
+
+.tech-stack-section i {
+     color: #7a7a7a;
+}
+
+.tech-stack-section h6 {
+     font-size: var(--fs-h6);
+}
+
+.stks {
+     font-size: 24px;
+}
+
+
+/* ----------------------------------------------------------
+   PROJECTS SECTION
+---------------------------------------------------------- */
+.projects-section {
+     grid-area: projects;
+}
+
+.projects-section h5{
+     font-size: var(--fs-h5);
+     color: var(--font-color1);
+}
+
+.projects-section i {
+     font-size: var(--fs-h5);
+     color: #7a7a7a;
+}
+
+
+/* ----------------------------------------------------------
+   CERTIFICATE SECTION
+---------------------------------------------------------- */
+.certificate-section {
+     grid-area: certificate;
+}
+
+.certificate-section h5{
+     font-size: var(--fs-h5);
+     color: var(--font-color1);
+}
+
+.certificate-section i {
+     color: #7a7a7a;
+     font-size: var(--fs-h5);
+}
+
+.crtfs {
+     margin-top: 4px;
+     background-color: var(--bg-color3);
+     display: block;
+     width: 95%;
+     padding: 6px;
+     border-radius: 2.5px;
+}
+
+.crtfs h6 {
+     font-size: var(--fs-h6);
+     line-height: 1;
+}
+
+.crtfs p {
+     font-size: var(--fs-small);
+}
+
+.crtfs button,
+.crtfs a {
+     font-size: var(--fs-small);
+     color: var(--font-color1);
+     padding: 2px;
+     text-decoration: none;
+}
+
+.crtfs button:hover {
+     background-color: var(--bg-color4);
+     border: none;
+}
+
+
+/* ----------------------------------------------------------
+   CONTACT SECTION
+---------------------------------------------------------- */
+.contact-section {
+     grid-area: contact;
+}
+
+.contact-section h5{
+     font-size: var(--fs-h5);
+     color: var(--font-color1);
+}
+.contact-section i {
+     font-size: var(--fs-h5);
+     color: #7a7a7a;
+}
+
+.cont-title {
+     display: flex;
+     gap: 4px;
+     align-items: center;
+     text-decoration: none;
+     color: var(--font-color1);
+}
+
+.contact-section a {
+     text-decoration: none;
+     color: var(--font-color1);
+}
+
+.cont {
+     border: solid 2px var(--bg-color4);
+     border-radius: 4px;
+     width: 90%;
+     padding: 4px;
+     margin-top: 4px;
+}
+
+.cont p {
+     font-size: var(--fs-small);
+}
+
+
+/* ----------------------------------------------------------
+   FOOTER
+---------------------------------------------------------- */
+footer {
+     grid-area: footer;
+     padding: 4px;
+}
+
+footer p {
+     text-align: center;
+}
