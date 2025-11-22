@@ -123,6 +123,10 @@ h1 {
      display: block;
 }
 
+header h6 {
+     font-size: var(--fs-h6);
+}
+
 .head-contents h6 {
      font-family: "poppins-SemiBold";
      font-size: var(--fs-h6);
