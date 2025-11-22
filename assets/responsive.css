@@ -1,283 +1,100 @@
 /* ================================
-   RESPONSIVE MEDIA QUERIES
+      RESPONSIVE MEDIA QUERIES
    ================================ */
 
 /* --------------------------------
    🔵 1200px — Large Desktops
 --------------------------------- */
 @media (max-width: 1200px) {
-     body {
-     display: grid;
-     grid-template-columns: 0.3fr 1fr 0.3fr;
-     grid-template-rows: auto 1fr auto;
-     grid-template-areas:
-          "left header right"
-          "left main right"
-          "left footer right";
-     font-family: "poppins-regular";
-   }
+  
+  body {
+    grid-template-columns: 0.2fr 1fr 0.2fr;
+  }
 
-   header{
-      grid-area: header;
-   }
+  .pfp-pic img {
+    width: 120px;
+  }
 
-   /* Profile Picture */
-   .pfp-pic img {
-     grid-area: left-head;
-     display: block;
-     width: 128px;
-     height: auto;
-     border-radius: 6px;
-}
-
-   main{
-      grid-area: main;
-   }
-
-   footer{
-      grid-area: footer;
-   }
-
-   main {
-          grid-template-columns: 1fr;
-          grid-template-areas:
-          "about-me  about-me experience"
-          "tech-stack tech-stack experience"
-          "projects certificate contact";
-     }
-
-   .about-section {
-    grid-area: about-me;
-   }
-
-   .experience-section {
-      grid-area: experience;
-   }
-
-   .tech-stack-section {
-    grid-area: tech-stack;
-   }
-
-   .projects-section {
-    grid-area: projects;
-   }
-
-   .certificate-section {
-    grid-area: certificate;
-   }
-
-   .contact-section {
-    grid-area: contact;
-   }
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "about-me about-me experience"
+      "tech-stack tech-stack experience"
+      "projects certificate contact";
+  }
 }
 
 /* --------------------------------
    🟣 768px — Tablets
 --------------------------------- */
 @media (max-width: 768px) {
-     body {
-     display: grid;
-     grid-template-columns: 0.03fr 1fr 0.03fr;
-     grid-template-rows: auto 1fr auto;
-     grid-template-areas:
-          "left header right"
-          "left main right"
-          "left footer right";
-     font-family: "poppins-regular";
-   }
 
-   header{
-      grid-area: header;
-   }
+  body {
+    grid-template-columns: 0.08fr 1fr 0.08fr;
+  }
 
-   /* Profile Picture */
-   .pfp-pic img {
-     grid-area: left-head;
-     display: block;
-     width: 128px;
-     height: auto;
-     border-radius: 6px;
-}
+  .pfp-pic img {
+    width: 115px;
+  }
 
-   main{
-      grid-area: main;
-   }
-
-   footer{
-      grid-area: footer;
-   }
-
-   main {
-          grid-template-columns: 1fr;
-          grid-template-areas:
-          "about-me  about-me experience"
-          "tech-stack tech-stack experience"
-          "projects certificate contact";
-     }
-
-   .about-section {
-    grid-area: about-me;
-   }
-
-   .experience-section {
-      grid-area: experience;
-   }
-
-   .tech-stack-section {
-    grid-area: tech-stack;
-   }
-
-   .projects-section {
-    grid-area: projects;
-   }
-
-   .certificate-section {
-    grid-area: certificate;
-   }
-
-   .contact-section {
-    grid-area: contact;
-   }
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "about-me"
+      "experience"
+      "tech-stack"
+      "projects"
+      "certificate"
+      "contact";
+  }
 }
 
 /* --------------------------------
    🟢 576px — Large Phones
 --------------------------------- */
 @media (max-width: 576px) {
-   body {
-     display: grid;
-     grid-template-columns: 0.05fr 1fr 0.05fr;
-     grid-template-rows: auto 1fr auto;
-     grid-template-areas:
-          "left header right"
-          "left main right"
-          "left footer right";
-     font-family: "poppins-regular";
-   }
 
-   header{
-      grid-area: header;
-   }
+  body {
+    grid-template-columns: 0.05fr 1fr 0.05fr;
+  }
 
-   /* Profile Picture */
-   .pfp-pic img {
-     grid-area: left-head;
-     display: block;
-     width: 124px;
-     height: auto;
-     border-radius: 6px;
-}
-   main{
-      grid-area: main;
-   }
+  .pfp-pic img {
+    width: 110px;
+  }
 
-   footer{
-      grid-area: footer;
-   }
-
-   main {
-          grid-template-columns: 1fr;
-          grid-template-areas:
-               "about-me"
-               "experience"
-               "tech-stack"
-               "projects"
-               "certificate"
-               "contact";
-     }
-
-   .about-section {
-    grid-area: about-me;
-   }
-
-   .experience-section {
-      grid-area: experience;
-   }
-
-   .tech-stack-section {
-    grid-area: tech-stack;
-   }
-
-   .projects-section {
-    grid-area: projects;
-   }
-
-   .certificate-section {
-    grid-area: certificate;
-   }
-
-   .contact-section {
-    grid-area: contact;
-   }
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "about-me"
+      "experience"
+      "tech-stack"
+      "projects"
+      "certificate"
+      "contact";
+  }
 }
 
 /* --------------------------------
    🟡 375px — Small Phones
 --------------------------------- */
 @media (max-width: 375px) {
-     body {
-     display: grid;
-     grid-template-columns: 0.05fr 1fr 0.05fr;
-     grid-template-rows: auto 1fr auto;
-     grid-template-areas:
-          "left header right"
-          "left main right"
-          "left footer right";
-     font-family: "poppins-regular";
-   }
 
-   header{
-      grid-area: header;
-   }
-   /* Profile Picture */
-   .pfp-pic img {
-      grid-area: left-head;
-      display: block;
-      width: 112px;
-      height: auto;
-      border-radius: 6px;
-   }
+  body {
+    grid-template-columns: 0.02fr 1fr 0.02fr;
+  }
 
-   main{
-      grid-area: main;
-   }
+  .pfp-pic img {
+    width: 100px;
+  }
 
-   footer{
-      grid-area: footer;
-   }
-
-   main {
-          grid-template-columns: 1fr;
-          grid-template-areas:
-               "about-me"
-               "experience"
-               "tech-stack"
-               "projects"
-               "certificate"
-               "contact";
-     }
-
-   .about-section {
-    grid-area: about-me;
-   }
-
-   .experience-section {
-      grid-area: experience;
-   }
-
-   .tech-stack-section {
-    grid-area: tech-stack;
-   }
-
-   .projects-section {
-    grid-area: projects;
-   }
-
-   .certificate-section {
-    grid-area: certificate;
-   }
-
-   .contact-section {
-    grid-area: contact;
-   }
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "about-me"
+      "experience"
+      "tech-stack"
+      "projects"
+      "certificate"
+      "contact";
+  }
 }

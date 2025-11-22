@@ -25,29 +25,28 @@
 ---------------------------------------------------------- */
 :root {
      /* Headings */
-     --fs-h1: clamp(0.2rem, 5vw, 1.8rem);
-     --fs-h2: clamp(0.9rem, 4vw, 1.5rem);
-     --fs-h3: clamp(0.8rem, 3.5vw, 1.3rem);
-     --fs-h4: clamp(0.7rem, 3vw, 1.1rem);
-     --fs-h5: clamp(0.65rem, 2.5vw, 1rem);
-     --fs-h6: clamp(0.4rem, 2vw, 0.9rem);
+     --fs-h1: clamp(0.9rem, 2.5vw, 1.4rem);
+     --fs-h2: clamp(0.95rem, 4vw, 1.5rem);
+     --fs-h3: clamp(0.9rem, 3.5vw, 1.3rem);
+     --fs-h4: clamp(0.85rem, 3vw, 1.1rem);
+     --fs-h5: clamp(0.8rem, 2.5vw, 1rem);
+     --fs-h6: clamp(0.75rem, 2vw, 0.9rem);
 
      /* Body Text */
-     --fs-p: clamp(0.55rem, 1.8vw, 0.8rem);
-     --fs-small: clamp(0.48rem, 1.4vw, 0.7rem);
+     --fs-p: clamp(0.8rem, 1.8vw, 0.95rem);
+     --fs-small: clamp(0.75rem, 1.6vw, 0.85rem);
 
      /* Font Colors */
      --font-color1: #151515;
      --font-color2: white;
 
-     /* Container Colors & Styling */
+     /* Background Colors */
      --bg-color1: #f6f6f6;
      --bg-color2: #c9c9c9;
      --bg-color3: rgb(223, 218, 218);
      --bg-color4: #b6b6b6;
-     --container-outline: solid 1px #7a7a7a;
 
-     /* Accent Colors */
+     /* Accent */
      --ac-color1: #00a8e0ca;
      --ac-color2: #008dbc;
 }
@@ -59,6 +58,7 @@
 * {
      margin: 0;
      padding: 0;
+     box-sizing: border-box;
 }
 
 html {
@@ -79,7 +79,7 @@ body {
 
 
 /* ----------------------------------------------------------
-   SIDES (Left / Right)
+   SIDES
 ---------------------------------------------------------- */
 .left {
      grid-area: left;
@@ -102,8 +102,11 @@ header {
 }
 
 /* Profile Picture */
-.pfp-pic img {
+.pfp-pic {
      grid-area: left-head;
+}
+
+.pfp-pic img {
      display: block;
      width: 144px;
      height: auto;
@@ -113,70 +116,69 @@ header {
 /* Header Content */
 .head-contents {
      grid-area: content-head;
-     margin: auto clamp(0.01rem, 2vw, 1rem);
-     position: relative;
+     margin: auto clamp(0.2rem, 2vw, 1rem);
 }
 
 h1 {
      font-size: var(--fs-h1);
      font-family: "poppins-Bold";
-     display: block;
-}
-
-header h6 {
-     font-size: var(--fs-h6);
+     white-space: nowrap;
+     overflow: normal;
+     max-width: max-content;
 }
 
 .head-contents h6 {
-     font-family: "poppins-SemiBold";
      font-size: var(--fs-h6);
+     font-family: "poppins-SemiBold";
      margin-top: 4px;
 }
 
-/* Description */
+/* Inline <article> title icon */
 article {
      display: flex;
      align-items: center;
+     gap: 2px;
      font-size: var(--fs-small);
 }
 
 /* Buttons */
 .btns {
-     margin-top: clamp(2px, 2vw, 8px);
+     margin-top: clamp(4px, 2vw, 12px);
+     display: flex;
+     gap: 6px;
+     white-space: nowrap;
+     overflow: normal;
+     max-width: max-content;
 }
 
-.btns button,
-.btns a {
+.btns .btn {
      background-color: var(--ac-color1);
      color: var(--font-color2);
      text-decoration: none;
      border-radius: 4px;
-     border: none;
      font-family: "poppins-SemiBold";
      font-size: var(--fs-small);
-     padding: 2px;
-     outline: none;
+     padding: 4px 8px;
+     display: inline-block;
 }
 
-.btns button:hover {
+.btns .btn:hover {
      background-color: var(--ac-color2);
-     padding: 2.2px;
 }
 
-/* Theme Switch */
 #switch {
      grid-area: right-head;
 }
 
 #switch button {
-     background-color: transparent;
+     background: transparent;
      border: none;
      font-size: 24px;
 }
 
 
 /* ----------------------------------------------------------
-   MAIN LAYOUT
+   MAIN CONTENT GRID
 ---------------------------------------------------------- */
 main {
      grid-area: main;
@@ -187,7 +189,6 @@ main {
           "tech-stack tech-stack experience"
           "projects certificate contact";
      grid-template-columns: 1fr 1fr 1fr;
-     grid-template-rows: auto auto auto;
      gap: 6px;
 }
 
@@ -196,10 +197,6 @@ main section {
      border: solid var(--bg-color2) 0.5px;
      border-radius: 4px;
      padding: 12px;
-}
-
-main article {
-     gap: 2px;
 }
 
 
@@ -212,16 +209,15 @@ main article {
 
 .about-section h5 {
      font-size: var(--fs-h5);
-     color: var(--font-color1);
-}
-
-.about-section i {
-     color: #7a7a7a;
 }
 
 .about-section p {
      font-size: var(--fs-p);
-     line-height: 1.8;
+     line-height: 1.7;
+}
+
+.about-section i {
+     color: #7a7a7a;
 }
 
 
@@ -232,10 +228,10 @@ main article {
      grid-area: experience;
 }
 
-.experience-section h5{
+.experience-section h5 {
      font-size: var(--fs-h5);
-     color: var(--font-color1);
 }
+
 .experience-section i {
      font-size: var(--fs-h5);
      color: #7a7a7a;
@@ -251,19 +247,21 @@ main article {
 
 .tech-stack-section h5 {
      font-size: var(--fs-h5);
-     color: var(--font-color1);
-}
-
-.tech-stack-section i {
-     color: #7a7a7a;
 }
 
 .tech-stack-section h6 {
      font-size: var(--fs-h6);
 }
 
+.tech-stack-section i {
+     color: #7a7a7a;
+}
+
 .stks {
-     font-size: 24px;
+     display: flex;
+     gap: 12px;
+     font-size: 28px;
+     margin: 4px 0;
 }
 
 
@@ -274,9 +272,8 @@ main article {
      grid-area: projects;
 }
 
-.projects-section h5{
+.projects-section h5 {
      font-size: var(--fs-h5);
-     color: var(--font-color1);
 }
 
 .projects-section i {
@@ -292,14 +289,13 @@ main article {
      grid-area: certificate;
 }
 
-.certificate-section h5{
+.certificate-section h5 {
      font-size: var(--fs-h5);
-     color: var(--font-color1);
 }
 
 .certificate-section i {
-     color: #7a7a7a;
      font-size: var(--fs-h5);
+     color: #7a7a7a;
 }
 
 .crtfs {
@@ -320,19 +316,21 @@ main article {
      font-size: var(--fs-small);
 }
 
-.crtfs button,
-.crtfs a {
-     font-size: var(--fs-small);
+.crtfs .btn {
+     display: inline-block;
+     margin-top: 4px;
+     padding: 2px 6px;
      color: var(--font-color1);
-     padding: 2px;
      text-decoration: none;
+     font-size: var(--fs-small);
+     background-color: var(--bg-color2);
+     border-radius: 4px;
+     border: solid 1px var(--bg-color4);
 }
 
-.crtfs button:hover {
+.crtfs .btn:hover {
      background-color: var(--bg-color4);
-     border: none;
 }
-
 
 /* ----------------------------------------------------------
    CONTACT SECTION
@@ -341,21 +339,13 @@ main article {
      grid-area: contact;
 }
 
-.contact-section h5{
+.contact-section h5 {
      font-size: var(--fs-h5);
-     color: var(--font-color1);
 }
+
 .contact-section i {
      font-size: var(--fs-h5);
      color: #7a7a7a;
-}
-
-.cont-title {
-     display: flex;
-     gap: 4px;
-     align-items: center;
-     text-decoration: none;
-     color: var(--font-color1);
 }
 
 .contact-section a {
@@ -366,9 +356,15 @@ main article {
 .cont {
      border: solid 2px var(--bg-color4);
      border-radius: 4px;
-     width: 90%;
-     padding: 4px;
-     margin-top: 4px;
+     width: 100%;
+     padding: 8px;
+     margin-top: 6px;
+}
+
+.cont-title {
+     display: flex;
+     align-items: center;
+     gap: 6px;
 }
 
 .cont p {
@@ -381,9 +377,10 @@ main article {
 ---------------------------------------------------------- */
 footer {
      grid-area: footer;
-     padding: 4px;
+     padding: 6px;
 }
 
 footer p {
      text-align: center;
+     font-size: var(--fs-small);
 }
