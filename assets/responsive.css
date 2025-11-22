@@ -146,7 +146,7 @@
 @media (max-width: 576px) {
    body {
      display: grid;
-     grid-template-columns: 0.01fr 1fr 0.01fr;
+     grid-template-columns: 0.05fr 1fr 0.05fr;
      grid-template-rows: auto 1fr auto;
      grid-template-areas:
           "left header right"
@@ -217,7 +217,7 @@
 @media (max-width: 375px) {
      body {
      display: grid;
-     grid-template-columns: 0.01fr 1fr 0.01fr;
+     grid-template-columns: 0.05fr 1fr 0.05fr;
      grid-template-rows: auto 1fr auto;
      grid-template-areas:
           "left header right"
